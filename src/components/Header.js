@@ -7,7 +7,7 @@ import styled from '@emotion/styled'
     padding:10px;
     font-weight:bold;
     color:#FFFFFF;
-    margin:1em;
+    margin-top:1em;
     `;
 
     const TextoHeader = styled.h1`

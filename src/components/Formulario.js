@@ -7,11 +7,11 @@ import styled from '@emotion/styled'
     margin-bottom:1rem;
     align-items:center;
     `;
-
+    //label
     const Label = styled.label`
     flex: 0 0 100px;
     `;
-
+    //select
     const Select = styled.select`
     display:block;
     width:100%;
@@ -19,10 +19,29 @@ import styled from '@emotion/styled'
     border:1px solid #e1e1e1;
     -webkit-appearance:none;
     `;
-
+    //input radio
     const InputRadio = styled.input`
     margin:0 1rem;
     `;
+    //boton
+    const Button = styled.button`
+    background-color:#00838F;
+    font-size:16px;
+    width:100%;
+    padding:1rem;
+    color: #000;
+    text-transform:uppercase;
+    font-weight:bold;
+    border:none;
+    transition:background-color .3s ease;
+    margin-top:2rem;
+
+    &:hover{
+        background-color:#26C6DA;
+        cursor:pointer;
+    }
+    `
+
 const Formulario = () => {
     return ( 
         <form>
@@ -66,7 +85,7 @@ const Formulario = () => {
                 />Completo
             </Block>
 
-            <button type="button"> Cotizar </button>
+            <Button type="button"> Cotizar </Button>
         </form>
      );
 }
