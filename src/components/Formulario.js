@@ -52,7 +52,7 @@ import { getDifferenceYear, calculateBrand, getPlan } from '../helper';
     text-align:center;
     `;
 
-const Formulario = ({saveSummary}) => {
+const Formulario = ({saveSummary, setLoading}) => {
 
     //State del formulario
     const [ data, saveData ]= useState({
@@ -103,11 +103,22 @@ const Formulario = ({saveSummary}) => {
         const increasePlan = getPlan(plan);
         result = parseFloat( increasePlan * result).toFixed(2);
 
+        // Mostrando spinner
+        setLoading(true);
+
+        //Luego de 3 segundos
+        setTimeout(() => {
+            //Ocultando de spinner
+            setLoading(false);
+            //Mandando la informacion al componente principal
+            saveSummary({
+                quotation:result,
+                data
+            })
+
+        }, 1000);
         
-        saveSummary({
-            quotation:result,
-            data
-        })
+        
     }
 
     
