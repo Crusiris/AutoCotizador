@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from '@emotion/styled'
-import Header from './components/Header'
-import Formulario from './components/Formulario'
+import styled from '@emotion/styled';
+import Header from './components/Header';
+import Formulario from './components/Formulario';
 
   //Estilos css, usando la libreria EMOTION STYLED
   const Container = styled.div`

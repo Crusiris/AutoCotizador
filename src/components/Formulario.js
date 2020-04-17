@@ -1,5 +1,6 @@
-import React, { useState }from 'react'
-import styled from '@emotion/styled'
+import React, { useState }from 'react';
+import styled from '@emotion/styled';
+import { getDifferenceYear } from '../helper';
 
     //Estilos css, usando la libreria EMOTION STYLED.
     const Block = styled.div`
@@ -85,6 +86,16 @@ const Formulario = () => {
         }
 
         saveError(false);
+
+        //Definiendo una base
+        let result = 2000;
+
+        //Obtener la diferencia de años
+        const difference = getDifferenceYear(year);
+
+        //Por cada año se resta el 3% de la base
+        result -= ((difference * 3) * result) /100
+        console.log(result);
     }
 
     

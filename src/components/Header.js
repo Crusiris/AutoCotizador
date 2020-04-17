@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from 'react';
+import styled from '@emotion/styled';
 
   //Estilos css, usando la libreria EMOTION STYLED
     const ContainerHeader = styled.header `
