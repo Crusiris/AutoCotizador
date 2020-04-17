@@ -8,13 +8,13 @@ export function calculateBrand(brand) {
     let increase;
 
     switch (brand) {
-        case 'eropean':
+        case 'eropeo':
             increase = 1.30;
             break;
-        case 'american':
+        case 'americano':
             increase = 1.15;
             break;
-        case 'asian':
+        case 'asiatico':
             increase = 1.05;
             break;
         default:

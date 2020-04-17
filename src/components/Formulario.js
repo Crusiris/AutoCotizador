@@ -98,7 +98,7 @@ const Formulario = ({saveSummary}) => {
         
         //Aumento segun la marca
         result = calculateBrand(brand) * result;
-
+        
         //incremento segun el plan
         const increasePlan = getPlan(plan);
         result = parseFloat( increasePlan * result).toFixed(2);
