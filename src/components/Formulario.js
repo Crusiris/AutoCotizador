@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import styled from '@emotion/styled';
-import { getDifferenceYear } from '../helper';
+import { getDifferenceYear, calculateBrand } from '../helper';
 
     //Estilos css, usando la libreria EMOTION STYLED.
     const Block = styled.div`
@@ -95,6 +95,10 @@ const Formulario = () => {
 
         //Por cada año se resta el 3% de la base
         result -= ((difference * 3) * result) /100
+        
+        //Aumento segun la marca
+        result = calculateBrand(brand) * result;
+
         console.log(result);
     }
 
@@ -115,9 +119,9 @@ const Formulario = () => {
                     onChange={getDataForm}
                 >
                     <option value="">-- Seleccione --</option>
-                        <option value="americano">Americano</option>
-                        <option value="europeo">Europeo</option>
-                        <option value="asiatico">Asiatico</option>
+                        <option value="american">Americano</option>
+                        <option value="eropean">Europeo</option>
+                        <option value="asian">Asiatico</option>
                 </Select>     
             </Block>
             <Block>
