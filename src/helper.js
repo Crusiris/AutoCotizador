@@ -29,3 +29,8 @@ export function calculateBrand(brand) {
 export function getPlan(plan) {
     return (plan === 'basic') ? 1.20 : 1.50;
 }
+
+// Mostrando la primera letra mayuscula
+export function capitalize(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+}

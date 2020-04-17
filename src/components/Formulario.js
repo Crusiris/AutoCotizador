@@ -126,9 +126,9 @@ const Formulario = ({saveSummary}) => {
                     onChange={getDataForm}
                 >
                     <option value="">-- Seleccione --</option>
-                        <option value="american">Americano</option>
-                        <option value="eropean">Europeo</option>
-                        <option value="asian">Asiatico</option>
+                        <option value="americano">Americano</option>
+                        <option value="eropeo">Europeo</option>
+                        <option value="asiatico">Asiatico</option>
                 </Select>     
             </Block>
             <Block>
@@ -156,16 +156,16 @@ const Formulario = ({saveSummary}) => {
                 <InputRadio
                 type="radio"
                 name="plan"
-                value="basic"
-                checked={ plan==="basic" }
+                value="basico"
+                checked={ plan==="basico" }
                 onChange={getDataForm}
                 />Basico 
 
                 <InputRadio
                 type="radio"
                 name="plan"
-                value="full"
-                checked={ plan==="full" }
+                value="completo"
+                checked={ plan==="completo" }
                 onChange={getDataForm}
                 />Completo
             </Block>
