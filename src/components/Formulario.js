@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 import styled from '@emotion/styled';
-import { getDifferenceYear, calculateBrand } from '../helper';
+import { getDifferenceYear, calculateBrand, getPlan } from '../helper';
 
     //Estilos css, usando la libreria EMOTION STYLED.
     const Block = styled.div`
@@ -99,6 +99,9 @@ const Formulario = () => {
         //Aumento segun la marca
         result = calculateBrand(brand) * result;
 
+        //incremento segun el plan
+        const increasePlan = getPlan(plan);
+        result = parseFloat( increasePlan * result).toFixed(2);
         console.log(result);
     }
 
