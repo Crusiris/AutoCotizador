@@ -42,6 +42,15 @@ import styled from '@emotion/styled'
     }
     `
 
+    const Error = styled.div`
+    background-color:red;
+    color:white;
+    padding:1rem;
+    margin-bottom:2rem;
+    width:100%;
+    text-align:center;
+    `;
+
 const Formulario = () => {
 
     //State del formulario
@@ -50,6 +59,10 @@ const Formulario = () => {
         year:'',
         plan:''
     })
+
+    //State para manejar errores
+    const [error, saveError]= useState(false)
+
     //Extrayendo los valores del state con destructuring
     const { brand, year, plan }= data;
 
@@ -61,12 +74,28 @@ const Formulario = () => {
             [e.target.name]:e.target.value
         })
     }
+    //Funcion para cotizar 
+    const quoteInsurance = e =>{
+        e.preventDefault();
+
+        //validando que los campos no este vacios
+        if(brand.trim() === "" || year.trim() === "" || plan.trim() === ""){
+            saveError(true);
+            return;
+        }
+
+        saveError(false);
+    }
 
     
     return ( 
         <form
-        
+        onSubmit={quoteInsurance}
         >
+            {error 
+            ?<Error>Todos los campos son obligatorios</Error>
+            :null }
+            
             <Block>
                 <Label>Marca</Label>
                 <Select
@@ -119,7 +148,7 @@ const Formulario = () => {
                 />Completo
             </Block>
 
-            <Button type="button"> Cotizar </Button>
+            <Button type="submit"> Cotizar </Button>
         </form>
      );
 }
