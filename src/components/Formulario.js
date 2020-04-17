@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }from 'react'
 import styled from '@emotion/styled'
 
     //Estilos css, usando la libreria EMOTION STYLED.
@@ -43,11 +43,37 @@ import styled from '@emotion/styled'
     `
 
 const Formulario = () => {
+
+    //State del formulario
+    const [ data, saveData ]= useState({
+        brand:'',
+        year:'',
+        plan:''
+    })
+    //Extrayendo los valores del state con destructuring
+    const { brand, year, plan }= data;
+
+    //leyendo los datos del formulario y agregarlos al state
+    const getDataForm = e =>{
+        saveData({
+            //Se hace una copia de lo que esta en el state[DATA] y se obtenienen los nuevos datos
+            ...data,
+            [e.target.name]:e.target.value
+        })
+    }
+
+    
     return ( 
-        <form>
+        <form
+        
+        >
             <Block>
                 <Label>Marca</Label>
-                <Select>
+                <Select
+                    name="brand"
+                    value={brand}
+                    onChange={getDataForm}
+                >
                     <option value="">-- Seleccione --</option>
                         <option value="americano">Americano</option>
                         <option value="europeo">Europeo</option>
@@ -56,7 +82,11 @@ const Formulario = () => {
             </Block>
             <Block>
                 <Label>Año</Label>
-                <Select>
+                <Select
+                    name="year"
+                    value={year}
+                    onChange={getDataForm}
+                >
                     <option value="">-- Seleccione --</option>
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
@@ -75,13 +105,17 @@ const Formulario = () => {
                 <InputRadio
                 type="radio"
                 name="plan"
-                value="basico"
+                value="basic"
+                checked={ plan==="basic" }
+                onChange={getDataForm}
                 />Basico 
 
                 <InputRadio
                 type="radio"
                 name="plan"
-                value="compleo"
+                value="full"
+                checked={ plan==="full" }
+                onChange={getDataForm}
                 />Completo
             </Block>
 
