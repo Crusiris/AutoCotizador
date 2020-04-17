@@ -102,6 +102,7 @@ const Formulario = ({saveSummary}) => {
         //incremento segun el plan
         const increasePlan = getPlan(plan);
         result = parseFloat( increasePlan * result).toFixed(2);
+
         
         saveSummary({
             quotation:result,

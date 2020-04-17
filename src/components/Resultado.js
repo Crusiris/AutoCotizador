@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from 'react';
+import styled from '@emotion/styled';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 //Componente de estilo con emotion
   const Msj = styled.p`
@@ -33,7 +34,13 @@ const Resultado = ({quotation}) => {
         ? <Msj>Elige marca, año y tipo de seguro</Msj>
         :(
             <ResultQuotation>
-            <QuotationTex>El total a pagar es: ${quotation}</QuotationTex> 
+                <TransitionGroup component="p" className="result">
+                    <CSSTransition classNames="result" key={quotation} timeout={{ enter:500, exit:500 }}>
+                    <QuotationTex>El total a pagar es: ${quotation}</QuotationTex>
+                    </CSSTransition>
+                </TransitionGroup>
+                 
+           
             </ResultQuotation>
         )
     );

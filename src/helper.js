@@ -27,7 +27,7 @@ export function calculateBrand(brand) {
 
 // Calculando incremento segun el plan
 export function getPlan(plan) {
-    return (plan === 'basic') ? 1.20 : 1.50;
+    return (plan === 'basico') ? 1.20 : 1.50;
 }
 
 // Mostrando la primera letra mayuscula
