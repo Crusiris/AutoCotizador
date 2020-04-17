@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import { capitalize } from '../helper'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
+import { capitalize } from '../helper';
 
 const ContainerSummary = styled.div`
     padding:1rem;
@@ -29,5 +30,8 @@ const Resumen = ({data}) => {
         
      );
 }
- 
+
+Resumen.propTypes={
+    data: PropTypes.object.isRequired
+}
 export default Resumen;

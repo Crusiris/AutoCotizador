@@ -1,4 +1,5 @@
 import React, { useState }from 'react';
+import PropTypes from 'prop-types'
 import styled from '@emotion/styled';
 import { getDifferenceYear, calculateBrand, getPlan } from '../helper';
 
@@ -112,7 +113,7 @@ const Formulario = ({saveSummary, setLoading}) => {
             setLoading(false);
             //Mandando la informacion al componente principal
             saveSummary({
-                quotation:result,
+                quotation:Number(result),
                 data
             })
 
@@ -187,4 +188,8 @@ const Formulario = ({saveSummary, setLoading}) => {
      );
 }
  
+Formulario.propTypes={
+    saveSummary: PropTypes.func.isRequired,
+    setLoading: PropTypes.func.isRequired
+}
 export default Formulario;

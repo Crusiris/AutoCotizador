@@ -52,7 +52,7 @@ function App() {
           data = { data }
           />
 
-          {!loading ? <Resultado quotation = {quotation}/> : null}
+          {!loading ? <Resultado quotation={quotation}/> : null}
           
           </ContainerForm>
 

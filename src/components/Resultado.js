@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 //Componente de estilo con emotion
   const Msj = styled.p`
@@ -34,16 +35,19 @@ const Resultado = ({quotation}) => {
         ? <Msj>Elige marca, año y tipo de seguro</Msj>
         :(
             <ResultQuotation>
-                <TransitionGroup component="p" className="result">
+                <TransitionGroup component="span" className="result">
                     <CSSTransition classNames="result" key={quotation} timeout={{ enter:500, exit:500 }}>
-                    <QuotationTex>El total a pagar es: ${quotation}</QuotationTex>
+                    <QuotationTex>El total a pagar es: <span>${quotation}</span> </QuotationTex>
                     </CSSTransition>
                 </TransitionGroup>
-                 
-           
             </ResultQuotation>
         )
     );
 }
- 
+
+
+Resultado.propTypes={
+    quotation: PropTypes.number.isRequired
+     
+}
 export default Resultado;
