@@ -52,7 +52,7 @@ import { getDifferenceYear, calculateBrand, getPlan } from '../helper';
     text-align:center;
     `;
 
-const Formulario = () => {
+const Formulario = ({saveSummary}) => {
 
     //State del formulario
     const [ data, saveData ]= useState({
@@ -102,7 +102,11 @@ const Formulario = () => {
         //incremento segun el plan
         const increasePlan = getPlan(plan);
         result = parseFloat( increasePlan * result).toFixed(2);
-        console.log(result);
+        
+        saveSummary({
+            quotation:result,
+            data
+        })
     }
 
     
